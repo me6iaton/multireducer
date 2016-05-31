@@ -1,11 +1,11 @@
 {
   "name": "multireducer",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A utility to wrap many copies of a single Redux reducer into a single key-based reducer.",
-  "main": "./lib/index.js",
+  "main": "./src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/erikras/multireducer"
+    "url": "https://github.com/me6iaton/multireducer"
   },
   "scripts": {
     "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
@@ -60,14 +60,5 @@
   "peerDependencies": {
     "react-redux": "^3.0.0 || ^4.0.0",
     "redux": "^3.0.0"
-  },
-  "npmName": "multireducer",
-  "npmFileMap": [
-    {
-      "basePath": "/dist/",
-      "files": [
-        "*.js"
-      ]
-    }
-  ]
+  }
 }
