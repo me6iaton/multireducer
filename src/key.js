@@ -1,3 +1,3 @@
-const key = '__multireducerKey=';
+const key = '/mrKey/';
 
 export default key;
