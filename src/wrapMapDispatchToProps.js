@@ -3,15 +3,9 @@ import multireducerBindActionCreators from './multireducerBindActionCreators';
 const wrapMapDispatchToProps = (mapDispatchToProps, multireducerKey) => {
   if (mapDispatchToProps) {
     if (typeof mapDispatchToProps === 'function') {
-      if (mapDispatchToProps.length > 2) {
-        return (dispatch, ownProps) => ({
-          dispatch,
-          ...mapDispatchToProps(multireducerKey, dispatch, ownProps)
-        });
-      }
-      return dispatch => ({
+      return (dispatch, ownProps) => ({
         dispatch,
-        ...mapDispatchToProps(multireducerKey, dispatch)
+        ...mapDispatchToProps(multireducerKey, dispatch, ownProps)
       });
     }
     return dispatch => ({
