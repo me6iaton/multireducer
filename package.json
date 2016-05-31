@@ -1,6 +1,6 @@
 {
   "name": "multireducer-me6iaton",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A utility to wrap many copies of a single Redux reducer into a single key-based reducer.",
   "main": "./lib/index.js",
   "repository": {
@@ -14,7 +14,7 @@
     "build:umd:min": "webpack src/index.js dist/multireducer.min.js --config webpack.config.production.js",
     "clean": "rimraf dist lib",
     "lint": "eslint src",
-    "prepublish": "npm run lint && npm run test && npm run clean && npm run build",
+    "prepublish": "npm run lint && npm run clean && npm run build",
     "test": "npm run lint && mocha --compilers js:babel-core/register --recursive --require ./test/setup.js"
   },
   "keywords": [
@@ -69,5 +69,8 @@
         "*.js"
       ]
     }
-  ]
+  ],
+  "dependencies": {
+    "hoist-non-react-statics": "^1.0.6"
+  }
 }

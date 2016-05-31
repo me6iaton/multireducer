@@ -12,17 +12,17 @@ export default function connectMultireducer(mapStateToProps, mapDispatchToProps,
   return DecoratedComponent => {
     class ConnectMultireducer extends Component {
       static displayName = `ConnectMultireducer(${getDisplayName(DecoratedComponent)})`;
-      static propTypes = {
-        multireducerKey: PropTypes.string.isRequired
+      static contextTypes = {
+        multireducerKey: PropTypes.string
       };
 
       componentWillMount() {
-        this.generateConnectedComponent(this.props);
+        this.generateConnectedComponent(this.context);
       }
 
-      componentWillReceiveProps(nextProps) {
-        if (this.props.multireducerKey !== nextProps.multireducerKey) {
-          this.generateConnectedComponent(nextProps);
+      componentWillReceiveProps(nextProps, nextContext) {
+        if (this.context.multireducerKey !== nextContext.multireducerKey) {
+          this.generateConnectedComponent(nextContext);
         }
       }
       static DecoratedComponent = DecoratedComponent;
